@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <div>
+        <p>
+    <h1> MEMBER REGISTRATION </h1>
+    <div>
+    <p>
+       <h2> Nicholas Co. Limited</h2> 
+    </p>
+    </div> 
+<head
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>registration of kobby's company</title>
+    <style type="text/css">
+        *
+        {
+            margin: 0;
+        }
+        body
+        {
+            width: 100%;
+            height: 100vh;
+            background: rgba(29, 2, 63, 0.301);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        form
+        {
+            width: 180px;
+            height: auto;
+            padding: 40px;
+            border-radius: 10px;
+            background-color: rgb(191, 195, 196);
+            -webkit-text-fill-color: rgb(20, 14, 14);
+            align-items: TOP;
+        }
+        h1
+        {
+            display: flex;
+            justify-content: left;
+            align-items: left;
+        }
+    </style>
+</head>
+<br><br>
+<body>
+    <form name="submit-to-google-sheet"> 
+        <label>First Name: </label><br>
+        <input typr="text" name="name" required><br><br>
+        <label>Second Name:</label><br>
+        <input typr="text" name="name" required><br><br>
+        <label>Email:</label><br>
+        <input type="text" name="email" required><br><br>
+        <label>Gender:</label>
+        <input type="radio" name="Male"><label>male</label>
+        <input type="radio" name="Female"><label>female</label>
+        <br><br>
+        <label>City:</label><br>
+        <input type="text" name="city" required><br><br>
+        <input type="submit" name="submi ">
+    </form>
+
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbzBFxsB4G7Ap5kRZERMGRn1XFuG0uP993ritYLl_YGquzf7KZjVKmJwzIJcvx4yHRPJ/exec'
+        const form = document.forms['submit-to-google-sheet']
+      
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => console.log('Success!', response))
+            .catch(error => console.error('Error!', error.message))
+        })
+      </script>
+      
+</body>
+</html>
